@@ -13,5 +13,6 @@
 ## Checklist
 - [ ] Tested locally against dev environment
 - [ ] No secrets committed
-- [ ] `npm run build:all` passes
-- [ ] Version bumped in package.json/pyproject.toml (if applicable)
+- [ ] `.venv/Scripts/python.exe -m pytest` passes
+- [ ] Docker image builds from root `Dockerfile`
+- [ ] Version bumped in `pyproject.toml` (if applicable)

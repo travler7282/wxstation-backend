@@ -1,27 +1,11 @@
 {
-  "name": "www-travler7282-com-monorepo",
+  "name": "wxstation-backend",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "backends/*"
-  ],
   "scripts": {
-    "install:all": "npm install",
-    "build:all": "npm run build --workspaces --if-present",
-    "test:all": "npm run test --workspaces --if-present",
-    "test:all:coverage": "npm run test:coverage --workspaces --if-present",
-    "dev:sdrx": "npm run dev --workspace=sdrx-backend",
-    "build:sdrx": "npm run build --workspace=sdrx-backend",
-    "dev:wxstation": "npm run dev --workspace=wxstation-backend",
-    "dev:roboarm": "npm run dev --workspace=roboarm-backend"
-  },
-  "overrides": {
-    "typescript": "~5.8.3"
-  },
-  "engines": {
-    "node": ">=24 <25"
-  },
-  "volta": {
-    "node": "24"
+    "venv": "python -m venv .venv",
+    "install": ".venv\\Scripts\\python.exe -m pip install -r requirements.txt",
+    "test": ".venv\\Scripts\\python.exe -m pytest",
+    "start": ".venv\\Scripts\\python.exe -m uvicorn main:app --host 0.0.0.0 --port 8001",
+    "dev": ".venv\\Scripts\\python.exe -m uvicorn main:app --reload --host 0.0.0.0 --port 8001"
   }
 }

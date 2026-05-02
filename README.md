@@ -34,15 +34,16 @@ All endpoints are available under `/wxstation/api/v1`.
 ## Running Locally
 
 ```bash
-python -m venv ../../.venv
-../../.venv/Scripts/python.exe -m pip install -r requirements.txt
-../../.venv/Scripts/python.exe -m uvicorn main:app --reload --port 8001
+python -m venv .venv
+.venv/Scripts/activate
+.venv/Scripts/python.exe -m pip install -r requirements.txt
+.venv/Scripts/python.exe -m uvicorn main:app --reload --port 8001
 ```
 
 ## Unit Tests
 
 ```bash
-../../.venv/Scripts/python.exe -m pytest tests
+.venv/Scripts/python.exe -m pytest tests
 ```
 
 ## Docker
@@ -51,4 +52,3 @@ python -m venv ../../.venv
 docker build -t wxstation-backend .
 docker run -p 8001:8001 wxstation-backend
 ```
-# wxstation-backend
